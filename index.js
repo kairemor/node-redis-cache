@@ -37,11 +37,11 @@ checkCache = (req, res, next) => {
 
 //  Endpoint:  GET /starships/:id
 //  @desc Return Starships data for particular starship id
-app.get("/starships/:id", checkCache, async (req, res) => {
+app.get("/country_data/country/:id", checkCache, async (req, res) => {
   try {
     const { id } = req.params;
     const starShipInfo = await axios.get(
-      `https://swapi.co/api/starships/${id}`
+      `http://aiobackend.herokuapp.com/country_data/country/${id}`
     );
 
     //get data from response
